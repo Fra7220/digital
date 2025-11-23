@@ -9,190 +9,189 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    background: linear-gradient(135deg, #f7f9fc, #eef2f7);
-}
+    /* full height wrapper for sticky footer */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #f7f9fc, #eef2f7);
+    }
 
-.page-wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+    .page-wrapper {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-#main-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
+    #main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 0;
+    }
 
-/* register card */
-.register-card {
-    width: 100%;
-    max-width: 450px;
-    background: #fff;
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    /* register card */
+    .register-card {
+        max-width: 420px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.register-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
+    .register-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
 
-.register-card h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-weight: 700;
-    color: #1a1a1a;
-}
+    .register-card h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 700;
+        color: #1a1a1a;
+    }
 
-.input-wrapper {
-    position: relative;
-    margin-bottom: 20px;
-}
+    .input-wrapper {
+        position: relative;
+        margin-bottom: 20px;
+    }
 
-.input-wrapper i {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-    font-size: 1.2rem;
-}
+    .input-wrapper i {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #888;
+        font-size: 1.2rem;
+    }
 
-.form-control {
-    padding-left: 40px;
-    border-radius: 50px;
-    height: 50px;
-    border: 1px solid #ccc;
-    transition: border-color 0.3s;
-}
+    .form-control {
+        padding-left: 40px;
+        border-radius: 50px;
+        height: 50px;
+        border: 1px solid #ccc;
+        transition: border-color 0.3s;
+    }
 
-.form-control:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 10px rgba(13,110,253,0.15);
-}
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 10px rgba(13,110,253,0.15);
+    }
 
-.btn-register {
-    width: 100%;
-    padding: 14px 0;
-    font-size: 1.1rem;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: linear-gradient(135deg, #0d6efd, #6610f2);
-    color: #fff;
-    border: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
+    /* register button */
+    .btn-register {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 1.1rem;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #0d6efd, #6610f2);
+        color: #fff;
+        border: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
 
-.btn-register:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(13,110,253,0.25);
-}
+    .btn-register:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(13,110,253,0.25);
+    }
 
-.terms-text {
-    font-size: 0.85rem;
-    color: #555;
-    margin-top: 10px;
-}
+    /* terms checkbox */
+    .terms-text {
+        font-size: 0.85rem;
+        color: #555;
+        margin-top: 10px;
+    }
 
-.terms-text a {
-    color: #0d6efd;
-    text-decoration: none;
-}
+    .terms-text a {
+        color: #0d6efd;
+        text-decoration: none;
+    }
 
-.terms-text a:hover {
-    text-decoration: underline;
-}
+    .terms-text a:hover {
+        text-decoration: underline;
+    }
 
-p.login-link {
-    text-align: center;
-    margin-top: 20px;
-    color: #555;
-}
+    /* login link */
+    p.login-link {
+        text-align: center;
+        margin-top: 20px;
+        color: #555;
+    }
 
-p.login-link a {
-    color: #0d6efd;
-    font-weight: 500;
-}
+    p.login-link a {
+        color: #0d6efd;
+        text-decoration: none;
+        font-weight: 500;
+    }
 
-p.login-link a:hover {
-    text-decoration: underline;
-}
+    p.login-link a:hover {
+        text-decoration: underline;
+    }
 
-/* sticky footer */
-footer {
-    background: #111;
-    color: #ddd;
-    padding: 20px;
-    text-align: center;
-    margin-top: auto;
-    box-shadow: 0 -6px 20px rgba(0,0,0,0.2), 0 0 15px rgba(13,110,253,0.2);
-}
+    /* sticky footer */
+    footer {
+        background: #111;
+        color: #ddd;
+        padding: 25px 20px;
+        text-align: center;
+        margin-top: auto;
+        box-shadow: 0 -6px 20px rgba(0,0,0,0.2), 0 0 15px rgba(13,110,253,0.2);
+    }
 
-footer a {
-    color: #ddd;
-    margin: 0 8px;
-    font-size: 1.25rem;
-    text-decoration: none;
-    transition: 0.3s;
-}
+    footer a {
+        color: #ddd;
+        margin: 0 8px;
+        font-size: 1.25rem;
+        text-decoration: none;
+    }
 
-footer a:hover {
-    color: #0d6efd;
-}
+    footer a:hover { color: #0d6efd; }
 
-/* Toast notifications */
-.toast-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
-}
 </style>
 </head>
 <body>
 
 <div class="page-wrapper" id="main-content">
-    <div class="register-card">
-        <h2>Create Your Account</h2>
-        <form id="registerForm">
-            <div class="input-wrapper">
-                <i class="bi bi-person-fill"></i>
-                <input type="text" id="full_name" class="form-control" placeholder="Full Name" required>
-            </div>
-            <div class="input-wrapper">
-                <i class="bi bi-envelope-fill"></i>
-                <input type="email" id="email" class="form-control" placeholder="Email" required>
-            </div>
-            <div class="input-wrapper">
-                <i class="bi bi-lock-fill"></i>
-                <input type="password" id="password" class="form-control" placeholder="Password" required>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" value="" id="termsCheck" required>
-                <label class="form-check-label terms-text" for="termsCheck">
-                    I agree that this is a <strong>demo version</strong> that collects user data for testing purposes. 
-                    This tool is <strong>informational only</strong> and not a substitute for professional medical advice.
-                </label>
-            </div>
-            <button type="submit" class="btn-register">
-                <i class="bi bi-person-plus-fill"></i> Register
-            </button>
-        </form>
-        <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+    <div class="container">
+        <div class="register-card">
+            <h2>Create Your Account</h2>
+            <form id="registerForm">
+                <div class="input-wrapper">
+                    <i class="bi bi-person-fill"></i>
+                    <input type="text" id="full_name" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="input-wrapper">
+                    <i class="bi bi-envelope-fill"></i>
+                    <input type="email" id="email" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="input-wrapper">
+                    <i class="bi bi-lock-fill"></i>
+                    <input type="password" id="password" class="form-control" placeholder="Password" required>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="termsCheck" required>
+                    <label class="form-check-label terms-text" for="termsCheck">
+                        I agree that this is a <strong>demo version</strong> that collects user data for testing purposes. 
+                        This tool is <strong>informational only</strong> and not a substitute for professional medical advice. 
+                        For health-related decisions, please consult qualified medical personnel.
+                    </label>
+                </div>
+                <button type="submit" class="btn-register">
+                    <i class="bi bi-person-plus-fill"></i> Register
+                </button>
+            </form>
+            <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+        </div>
     </div>
 
     <!-- sticky footer -->
@@ -209,60 +208,44 @@ footer a:hover {
     </footer>
 </div>
 
-<!-- Toast Container -->
-<div class="toast-container" id="toastContainer"></div>
-
 <script>
-function showToast(message, type="info") {
-    const container = document.getElementById("toastContainer");
-    const toast = document.createElement("div");
-    toast.className = `toast align-items-center text-bg-${type} border-0 mb-2`;
-    toast.role = "alert";
-    toast.innerHTML = `
-        <div class="d-flex">
-            <div class="toast-body">${message}</div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="this.parentElement.parentElement.remove();"></button>
-        </div>`;
-    container.appendChild(toast);
-    setTimeout(() => toast.remove(), 5000);
-}
+    // register form submission
+    document.getElementById("registerForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-// register form submission
-document.getElementById("registerForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    if(!document.getElementById("termsCheck").checked){
-        showToast("You must agree to the terms.", "warning");
-        return;
-    }
-
-    const full_name = document.getElementById("full_name").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    try {
-        const res = await fetch("/api/auth/register", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({full_name, email, password})
-        });
-        const data = await res.json();
-
-        if (res.ok) {
-            showToast("Registration successful!", "success");
-            localStorage.setItem("token", data.token);
-            setTimeout(() => window.location.href = "login.html", 1500);
-        } else {
-            showToast(data.error || "Registration failed", "danger");
+        const termsCheck = document.getElementById("termsCheck");
+        if(!termsCheck.checked){
+            alert("You must agree to the terms and conditions to register.");
+            return;
         }
-    } catch (err) {
-        console.error(err);
-        showToast("Something went wrong. Try again.", "danger");
-    }
-});
+
+        const full_name = document.getElementById("full_name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        try {
+            const res = await fetch("/api/auth/register", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({full_name, email, password})
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                alert("Registration successful!");
+                localStorage.setItem("token", data.token);
+                window.location.href = "login.html";
+            } else {
+                alert(data.error || "Registration failed");
+            }
+        } catch (err) {
+            console.error("Error:", err);
+            alert("Something went wrong. Please try again.");
+        }
+    });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

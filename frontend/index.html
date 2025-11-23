@@ -9,6 +9,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
+    /*  full height wrapper */
     html, body {
         height: 100%;
         margin: 0;
@@ -16,31 +17,121 @@
         font-family: "Inter", sans-serif;
         background: linear-gradient(135deg, #f7f9fc, #eef2f7);
     }
-    .page-wrapper { min-height: 100%; display: flex; flex-direction: column; }
-    #main-content { flex: 1; display: flex; flex-direction: column; }
-    .hero { padding-top: 10vh; text-align: center; }
-    .hero-title { font-size: 3rem; font-weight: 700; color: #1a1a1a; }
-    .hero-subtext { font-size: 1.25rem; color: #555; margin-bottom: 3rem; }
-    .hero-buttons { display: flex; flex-direction: column; align-items: center; gap: 15px; }
-    .btn-custom { padding: 12px 28px; font-size: 1.05rem; border-radius: 50px; display: flex; align-items: center; gap: 10px; transition: 0.3s; min-width: 220px; justify-content: center; }
-    .btn-custom:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,0.1); }
-    #loader-screen { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; background: white; z-index: 9999; }
-    .quote { font-size: 1.2rem; color: #444; text-align: center; max-width: 300px; margin-top: 18px; opacity: 0; animation: fadeInQuote 1.5s linear forwards; }
+
+    /* page wrapper to allow sticky footer */
+    .page-wrapper {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* main content grows to push footer down */
+    #main-content {
+        flex: 1;
+    }
+
+    /* # comment: hero section */
+    .hero {
+        padding-top: 10vh;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #1a1a1a;
+    }
+
+    .hero-subtext {
+        font-size: 1.25rem;
+        color: #555;
+        margin-bottom: 3rem;
+    }
+
+    /* vertical buttons with icons */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .btn-custom {
+        padding: 12px 28px;
+        font-size: 1.05rem;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: 0.3s;
+        min-width: 220px;
+        justify-content: center;
+    }
+
+    .btn-custom:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    }
+
+    /* loader screen */
+    #loader-screen {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: white;
+        z-index: 9999;
+    }
+
+    .quote {
+        font-size: 1.2rem;
+        color: #444;
+        text-align: center;
+        max-width: 300px;
+        margin-top: 18px;
+        opacity: 0;
+        animation: fadeInQuote 1.5s linear forwards;
+    }
+
     @keyframes fadeInQuote { 0% {opacity:0;} 100% {opacity:1;} }
-    .fade-in { animation: fadeIn 1.2s ease forwards; opacity: 0; }
+
+    .fade-in {
+        animation: fadeIn 1.2s ease forwards;
+        opacity: 0;
+    }
     @keyframes fadeIn { to { opacity: 1; } }
-    footer { background: #111; color: #ddd; padding: 25px 20px; text-align: center; margin-top: auto; box-shadow: 0 -6px 20px rgba(0,0,0,0.2), 0 0 15px rgba(13,110,253,0.2); }
-    footer a { color: #ddd; margin: 0 8px; font-size: 1.25rem; text-decoration: none; }
+
+    /* footer sticky with glow */
+    footer {
+        background: #111;
+        color: #ddd;
+        padding: 25px 20px;
+        text-align: center;
+        margin-top: auto; /* keeps footer at bottom */
+        box-shadow: 0 -6px 20px rgba(0,0,0,0.2), 0 0 15px rgba(13,110,253,0.2);
+    }
+
+    footer a {
+        color: #ddd;
+        margin: 0 8px;
+        font-size: 1.25rem;
+        text-decoration: none;
+    }
+
     footer a:hover { color: #0d6efd; }
 </style>
 </head>
 <body>
 
+<!-- loader -->
 <div id="loader-screen">
     <div class="spinner-border text-primary" style="width:3rem; height:3rem;"></div>
     <div id="quote-box" class="quote"></div>
 </div>
 
+<!-- page wrapper -->
 <div class="page-wrapper fade-in" id="main-content" style="display:none;">
     <div class="container text-center hero">
         <h1 class="hero-title">Welcome to Digital Fatigue AI 🚀</h1>
@@ -53,12 +144,13 @@
             <a href="login.html" class="btn btn-success btn-custom">
                 <i class="bi bi-box-arrow-in-right"></i> Login
             </a>
-            <a href="https://digital-fatigue-ai.onrender.com/api/auth/google" class="btn btn-danger btn-custom">
+            <a href="/api/auth/google" class="btn btn-danger btn-custom">
                 <i class="bi bi-google"></i> Login with Google
             </a>
         </div>
     </div>
 
+    <!-- sticky footer -->
     <footer>
         <p>© 2025 Digital Fatigue AI • All rights reserved</p>
         <div class="mt-2">
@@ -73,6 +165,7 @@
 </div>
 
 <script>
+    // rotating quotes
     const quotes = [
         "Your health is your first priority.",
         "A rested mind performs better.",
@@ -96,6 +189,7 @@
     showNextQuote();
     setInterval(showNextQuote, 2500);
 
+    // hide loader after 4 seconds
     setTimeout(() => {
         document.getElementById("loader-screen").style.display = "none";
         document.getElementById("main-content").style.display = "flex";
